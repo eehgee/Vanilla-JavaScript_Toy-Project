@@ -4,13 +4,12 @@
 @import url(/css/default.css);
 
 body{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white-color);
 }
 
 #wrap{
     width: 100%;
     height: 100vh;
-
 }
 
 h1{
@@ -25,7 +24,7 @@ h1{
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
     grid-template-areas: 
     "item1 item2 item3 item4"
     "item5 item6 item7 item8";
@@ -51,7 +50,6 @@ h1{
 
 .item1{
     grid-area: item1;
-    
 }
 
 .item2{

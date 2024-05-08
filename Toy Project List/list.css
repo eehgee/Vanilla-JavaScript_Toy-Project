@@ -48,6 +48,7 @@ h1{
     padding: 0 10px;
 }
 
+/* translateZ 구하는 방법 : README.md 확인 */
 .boximg:nth-child(1){
     transform: rotateY(0deg) translateZ(259px);
 }

@@ -13,13 +13,21 @@ a{
 
 /* color */
 html, body{
-    --white-color : #FFF;
-    --black-color : #333;
-    --red-color : #FF0000;
     --main-color : #FE7F08;
 
+    --white-color : #FFF;
+    --black-color : #333;
+    
     --gray01-color : #EAE8E8;
     
-    
+    --red-color : #FF0000;
+    --deepred-color : rgb(252, 0, 84);
+
+    --orange01-color : rgb(255, 253, 248);
     --orange05-color : #EE470A;
+    
+    --lime-color : rgb(228, 255, 53);
+
+    --navy-color : rgb(22, 26, 47);
+
 }

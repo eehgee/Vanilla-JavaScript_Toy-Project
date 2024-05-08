@@ -34,7 +34,7 @@ header .progessbar .bar{
     transition: 0.7s;
 }
 
-.content{
+.contents{
     width: 100%;
     display: flex;
     position: relative;
@@ -57,11 +57,11 @@ nav.active ~ section{
     transform:  translate3d(400px, 0, 0);
 }
 
-.content nav ul{
+.contents nav ul{
     position: sticky;
     left: 0;
     top: 0;
-    padding-top: 50%;
+    padding-top: 30%;
     padding-left: 30px;
 
     display: flex;
@@ -69,20 +69,20 @@ nav.active ~ section{
     align-items: flex-start;
 }
 
-.content nav ul li a{
+.contents nav ul li a{
     width: 100%;
     display: block;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: bold;
     color: var(--white-color);
     padding-bottom: 50px;
 }
 
-.content nav ul li.title a{
+.contents nav ul li.title a{
     font-size: 2.4rem;
 }
 
-.content section{
+.contents section{
     width: calc(100% - 430px);
     height: 100%;
     padding-left: 30px;
