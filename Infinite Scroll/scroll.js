@@ -10,13 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let loaded = get('.loading')
   let container = get('.container')
 
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry=>{
         if(entry.isIntersecting && !loading){
             loading = true
             datapull()
-
         }
     })
   }, {rootMargin: "0px", threshold: 0.1})
@@ -37,8 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
             observer.disconnect()
             loaded.style.display = 'none';
         }
-
-
     } catch (error) {
         console.log('error')
         loading = false;
