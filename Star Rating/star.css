@@ -3,21 +3,21 @@
 @import url(/css/reset.css);
 @import url(/css/default.css);
 
-body{
-    background-color:rgb(255, 252, 236);
+body {
+  background-color: var(--beige-color);
 }
 
-h1{
-    text-align: center;
-    margin: 50px 0 50px 0;
+h1 {
+  text-align: center;
+  margin: 50px 0 50px 0;
 }
 
-.star-rating{
-    width: 300px;
-    margin: 0 auto;
+.star-rating {
+  width: auto;
+  text-align: center;
 }
 
-.current-rating{
-    margin: 20px 0 60px 0;
-    text-align: center;
+.current-rating {
+  margin: 20px 0 60px 0;
+  text-align: center;
 }

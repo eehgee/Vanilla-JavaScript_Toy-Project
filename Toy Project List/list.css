@@ -3,100 +3,99 @@
 @import url(/css/reset.css);
 @import url(/css/default.css);
 
-body{
-    background-color: var(--white-color);
+body {
+  background-color: var(--white-color);
 }
 
-#wrap{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-h1{
-    margin-bottom: 50px;
+h1 {
+  margin-bottom: 50px;
 }
 
-.container{
-    width: 300px;
-    height: 200px;
-    position: relative;
-    perspective: 900px;
+.container {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  perspective: 900px;
 }
 
-.carousel{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transform-style: preserve-3d;
-    transform: translateZ(-259PX);
-    transition: transform 0.5s;
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: translateZ(-259px);
+  transition: transform 0.5s;
 }
 
-.carousel .boximg{
-    width: 300px;
-    height: 200px;
-    position: absolute;
-    transition: transform 0.5s;
-    padding: 0 10px;
+.carousel .boximg {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  transition: transform 0.5s;
+  padding: 0 10px;
 }
 
 /* translateZ 구하는 방법 : README.md 확인 */
-.boximg:nth-child(1){
-    transform: rotateY(0deg) translateZ(259px);
+.boximg:nth-child(1) {
+  transform: rotateY(0deg) translateZ(259px);
 }
 
-.boximg:nth-child(2){
-    transform: rotateY(60deg) translateZ(259px);
+.boximg:nth-child(2) {
+  transform: rotateY(60deg) translateZ(259px);
 }
 
-.boximg:nth-child(3){
-    transform: rotateY(120deg) translateZ(259px);
+.boximg:nth-child(3) {
+  transform: rotateY(120deg) translateZ(259px);
 }
 
-.boximg:nth-child(4){
-    transform: rotateY(180deg) translateZ(259px);
+.boximg:nth-child(4) {
+  transform: rotateY(180deg) translateZ(259px);
 }
 
-.boximg:nth-child(5){
-    transform: rotateY(240deg) translateZ(259px);
+.boximg:nth-child(5) {
+  transform: rotateY(240deg) translateZ(259px);
 }
 
-.boximg:nth-child(6){
-    transform: rotateY(300deg) translateZ(259px);
+.boximg:nth-child(6) {
+  transform: rotateY(300deg) translateZ(259px);
 }
 
-.boximg img{
-    width: 100%;
-    height: 100%;
+.boximg img {
+  width: 100%;
+  height: 100%;
 }
 
-.btn{
-    width: 170px;
-    height: 33px;
-    margin-top: 40px;
+.btn {
+  width: 170px;
+  height: 33px;
+  margin-top: 40px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.btn button{ 
-    width: 65px;
-    height: 30px;                                                                                                                        
-    background-color: var(--black-color);
-    border: none;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+.btn button {
+  width: 65px;
+  height: 30px;
+  background-color: var(--black-color);
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
-

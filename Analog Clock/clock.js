@@ -1,27 +1,27 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   const get = (target) => {
     return document.querySelector(target);
   };
 
   // element 동적 생성
-  const container = get('.analog-clock');
+  const container = get(".analog-clock");
 
-  const eleHour = document.createElement('div');
-  const eleMinute = document.createElement('div');
-  const eleSecond = document.createElement('div');
+  const eleHour = document.createElement("div");
+  const eleMinute = document.createElement("div");
+  const eleSecond = document.createElement("div");
 
-  eleHour.classList.add('hand', 'hour');
-  eleMinute.classList.add('hand', 'minute');
-  eleSecond.classList.add('hand', 'second');
+  eleHour.classList.add("hand", "hour");
+  eleMinute.classList.add("hand", "minute");
+  eleSecond.classList.add("hand", "second");
 
   container.appendChild(eleHour);
   container.appendChild(eleMinute);
   container.appendChild(eleSecond);
 
   for (let i = 1; i <= 12; i++) {
-    const times = document.createElement('div');
-    times.classList.add('time', `time${i}`);
-    times.innerHTML = '|';
+    const times = document.createElement("div");
+    times.classList.add("time", `time${i}`);
+    times.innerHTML = "|";
     container.appendChild(times);
   }
 
