@@ -21,6 +21,7 @@ body {
   --black-color: #333;
 
   --gray01-color: #eae8e8;
+  --gray02-color: #e2e2e2;
 
   --red-color: #ff0000;
   --deepred-color: rgb(252, 0, 84);
@@ -31,6 +32,9 @@ body {
   --beige-color: rgb(255, 252, 236);
 
   --lime-color: rgb(228, 255, 53);
+
+  --green01-color : rgb(189, 228, 215);
+  --green02-color : rgb(123, 144, 134);
 
   --navy-color: rgb(22, 26, 47);
 }

@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+@import url(/css/reset.css);
+@import url(/css/default.css);
+
+body{
+    background-color: var(--green01-color);
+}
+
+#wrap{
+    width: 100%;
+    height: 100vh;
+}
+
+h1{
+    text-align: center;
+    margin: 50px 0 50px 0;
+}
+
+.calc-container{
+    width: 350px;
+    height: 450px;
+    margin: 0 auto;
+    border: 1px solid var(--black-color);
+    padding: 10px;
+    background-color: var(--white-color);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 120px repeat(5, 1fr);
+    grid-template-areas: 
+    "text text text text"
+    "reset reset back multiple"
+    "num7 num8 num9 divide"
+    "num4 num5 num6 minus"
+    "num1 num2 num3 plus"
+    "num0 num0 dot hap";
+    gap: 3px;
+    box-shadow: 3px 11px 2px 5px rgba(0, 0, 0, 0.1)
+}
+
+.text{
+    grid-area: text;
+}
+
+.reset{
+    grid-area: reset;
+}
+
+.back{
+    grid-area: back;
+}
+
+.multiple{
+    grid-area: multiple;
+}
+
+.num7{
+    grid-area: num7;
+}
+
+.num8{
+    grid-area: num8;
+}
+
+.num9{
+    grid-area: num9;
+}
+
+.divide{
+    grid-area: divide;
+}
+
+.num4{
+    grid-area: num4;
+}
+
+.num5{
+    grid-area: num5;
+}
+
+.num6{
+    grid-area: num6;
+}
+
+.minus{
+    grid-area: minus;
+}
+
+.num1{
+    grid-area: num1;
+}
+
+.num2{
+    grid-area: num2;
+}
+
+.num3{
+    grid-area: num3;
+}
+
+.plus{
+    grid-area: plus;
+}
+
+.num0{
+    grid-area: num0;
+}
+
+.dot{
+    grid-area: dot;
+}
+
+.hap{
+    grid-area: hap;
+}
+
+.calc-container > div{
+    width: auto;
+    height: auto;
+    border: 1px solid var(--gray01-color);
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.calc-container > div:not(.text):active{
+    background-color: var(--gray02-color);
+}
+
+.calc-container .text{
+    cursor: auto;
+}
+
+.calc-container .operation{
+    background-color: var(--green02-color);
+    color: var(--white-color);
+    font-size: 1.4rem;
+
+}
