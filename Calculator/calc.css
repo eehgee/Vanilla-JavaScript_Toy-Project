@@ -29,18 +29,30 @@ h1{
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 120px repeat(5, 1fr);
     grid-template-areas: 
-    "text text text text"
+    "inputms inputms inputms inputms"
     "reset reset back multiple"
     "num7 num8 num9 divide"
     "num4 num5 num6 minus"
     "num1 num2 num3 plus"
-    "num0 num0 dot hap";
+    "num0 num0 dot total";
     gap: 3px;
     box-shadow: 3px 11px 2px 5px rgba(0, 0, 0, 0.1)
 }
 
-.text{
-    grid-area: text;
+.inputms{
+    grid-area: inputms;
+}
+
+.inputms form{
+    margin-top: 50px;
+}
+
+.inputms form input{
+    width: 300px;
+    height: 40px;
+    font-size: 1.4rem;
+    outline: none;
+    border: none;
 }
 
 .reset{
@@ -111,8 +123,12 @@ h1{
     grid-area: dot;
 }
 
-.hap{
-    grid-area: hap;
+.total{
+    grid-area: total;
+
+    background-color: var(--green02-color);
+    color: var(--white-color);
+    font-size: 1.4rem;
 }
 
 .calc-container > div{
@@ -126,14 +142,11 @@ h1{
     align-items: center;
     font-size: 1.2rem;
     cursor: pointer;
+    user-select: none;
 }
 
-.calc-container > div:not(.text):active{
+.calc-container > div:not(.inputms):active{
     background-color: var(--gray02-color);
-}
-
-.calc-container .text{
-    cursor: auto;
 }
 
 .calc-container .operation{
