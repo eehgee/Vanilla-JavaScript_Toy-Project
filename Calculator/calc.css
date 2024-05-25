@@ -53,6 +53,7 @@ h1{
     font-size: 1.4rem;
     outline: none;
     border: none;
+    pointer-events: none;
 }
 
 .reset{
@@ -131,7 +132,7 @@ h1{
     font-size: 1.4rem;
 }
 
-.calc-container > div{
+.calc-container > button{
     width: auto;
     height: auto;
     border: 1px solid var(--gray01-color);
@@ -141,11 +142,14 @@ h1{
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    cursor: pointer;
     user-select: none;
 }
 
-.calc-container > div:not(.inputms):active{
+.calc-container > button:not(.inputms){
+    cursor: pointer;  
+}
+
+.calc-container > button:not(.inputms):active{
     background-color: var(--gray02-color);
 }
 

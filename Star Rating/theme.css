@@ -1,21 +1,21 @@
 @charset "utf-8";
 
-.star-rating-container{
+.star-rating{
     --main-color : #dddccc;
     --hover-color : #adadad;
     --select-color : #ee470a;
 }
 
-.star-rating-container > i{
+.star-rating > i{
     font-size: 60px;
     color: var(--main-color);
 }
 
-.star-rating-container > i.hover{
+.star-rating > i.hover{
     color: var(--hover-color);
 }
 
-.star-rating-container > i.select{
+.star-rating > i.select{
     color: var(--select-color);
 }
 
