@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const textInput = get("#textInput");
-  textInput.value = 0;
+  textInput.value = "0";
 
   const reset = get(".reset");
   const backSpace = get(".back");
@@ -35,24 +35,37 @@ document.addEventListener("DOMContentLoaded", () => {
   backSpace.addEventListener("click", () => {
     textInput.value = textInput.value.slice(0, -1) || 0;
     currentNumber = parseFloat(textInput.value);
-    prevNumber = "0";
-    currentNumber = "0";
-    operBtn = "";
+
+    if (currentNumber === 0) {
+      currentNumber = "0";
+      prevNumber = "0";
+      operBtn = "";
+    }
   });
 
   // '.' 이벤트
-  dot.addEventListener("click", (e) => {
-    if (!textInput.value.includes(".")) {
-      textInput.value += ".";
-    }
+  dot.addEventListener("click", () => {
+    currentNumber = textInput.value;
+  const lastOperatorIndex = Math.max(
+    currentNumber.lastIndexOf('+'),
+    currentNumber.lastIndexOf('-'),
+    currentNumber.lastIndexOf('*'),
+    currentNumber.lastIndexOf('÷')
+  );
+  const lastNumber = currentNumber.slice(lastOperatorIndex + 1);
+  if (!lastNumber.includes(".")) {
+    textInput.value += ".";
+  }
   });
 
   // 숫자 입력 이벤트
   number.forEach((num) => {
     num.addEventListener("click", (e) => {
+      // 최대 10자리까지 입력가능
       if (textInput.value.length > 9) {
         textInput.value = textInput.value.slice(0, 9);
       }
+
       const numberBtn = e.target.textContent;
       if (textInput.value === "0") {
         textInput.value = numberBtn;
@@ -77,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (prevNumber === "0") {
           prevNumber = parseFloat(textInput.value);
-        } 
+        }
       }
 
       operBtn = operator; // 현재 입력된 연산자 저장
@@ -93,12 +106,19 @@ document.addEventListener("DOMContentLoaded", () => {
     currentNumber = parseFloat(
       textInput.value.slice(prevNumber.toString().length + 1)
     );
+
+    calculator();
+    // 연산자 초기화
+    operBtn = "";
+  });
+
+  function calculator() {
     // 이전 결과가 있는 경우와 없는 경우를 구분하여 처리
-    if (prevNumber !== 0 && currentNumber !== 0) {
+    if (prevNumber !== null && currentNumber !== null) {
       // 저장된 이전 숫자와 현재 숫자에 대해 연산 수행
       switch (operBtn) {
         case "+":
-          prevNumber += +currentNumber;
+          prevNumber += currentNumber;
           break;
         case "-":
           prevNumber -= currentNumber;
@@ -110,8 +130,11 @@ document.addEventListener("DOMContentLoaded", () => {
           if (prevNumber !== 0) {
             prevNumber /= currentNumber;
           } else {
-            prevNumber = "error";
+            textInput.value = "error";
+
+            return;
           }
+
           break;
         default:
           break;
@@ -120,7 +143,5 @@ document.addEventListener("DOMContentLoaded", () => {
       textInput.value += " = " + prevNumber;
       console.log(textInput.value);
     }
-    // 연산자 초기화
-    operBtn = "";
-  });
+  }
 });
