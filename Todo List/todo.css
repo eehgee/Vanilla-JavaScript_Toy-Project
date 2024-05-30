@@ -100,7 +100,6 @@ header::after {
   padding-left: 10px;
   outline: none;
   border: none;
-  
 }
 
 .item button {
@@ -119,6 +118,6 @@ header::after {
   background-color: rgb(255, 0, 72);
 }
 
-.item #confirmBtn{
+.item #confirmBtn {
   background-color: aquamarine;
 }

@@ -20,3 +20,5 @@ ex. 지름 : 300px, 각도 : 60
 https://jsonplaceholder.typicode.com/posts
 
 
+# Todo List
+localStorage : 문자열만 저장할 수 있기 때문에, 객체나 배열을 저장할 때는 JSON으로 변환해야 함
