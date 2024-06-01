@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 사용자가 검색어를 입력하거나 삭제할 때마다 searchAdd 함수를 호출하여 실시간으로 리스트를 필터링하도록 해wna
+  // 사용자가 검색어를 입력하거나 삭제할 때마다 searchAdd 함수를 호출하여 실시간으로 리스트를 필터링하도록 해줌
   // input 이벤트는 실시간으로 입력 필드의 변경 사항을 감지하기 때문에 사용자가 글자를 하나씩 입력하거나 삭제할 때마다 이벤트가 트리거됩니다.
   searchTxt.addEventListener("input", searchAdd);
 
