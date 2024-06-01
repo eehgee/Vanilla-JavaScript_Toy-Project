@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchClick = get("#searchBtn");
   const container = get(".content");
 
-  // list 추가
+  // ---할일 item 추가---
   const todoAdd = () => {
     const pulltxt = inputTxt.value;
     if (pulltxt !== "") {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addClick.addEventListener("click", todoAdd);
 
-  // list item 생성 함수
+  // ---item 생성 함수---
   const listfunc = (pulltxt) => {
     let itemBox = document.createElement("div");
     itemBox.classList.add("item");
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
     container.appendChild(itemBox);
 
-    // listfunc : 수정 삭제 완료
+    // item 수정 삭제 완료
     container.addEventListener("click", (e) => {
       const target = e.target;
       const itemBox = target.closest(".item");
@@ -66,9 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
         display.removeAttribute("readOnly");
         display.focus();
         const textLength = display.value.length;
-        // start와 end 모두 textLength로 설정하여 커서를 텍스트의 마지막 위치로 이동시킵니다.
+        // start와 end 모두 textLength로 설정하여 커서를 텍스트의 마지막 위치로 이동
         display.setSelectionRange(textLength, textLength);
-
         editButton.innerHTML = `<i class="bi bi-check-lg"></i>`;
         editButton.id = "confirmBtn";
       }
@@ -81,6 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   };
+
+
+  // ---localStorage를 활용하여 새로고침 시에도 유지---
   // 저장된 데이터를 불러와서 화면에 표시
   function loadSavedData() {
     // todolist라는 키에 저장된 데이터를 가져와서 변수에 할당
@@ -107,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("todolist", JSON.stringify(todoList));
   }
 
-  // 검색 list 추가
+  // ---검색 list 추가---
   const searchAdd = () => {
     const pullsearch = searchTxt.value.toLowerCase();
     const items = document.querySelectorAll(".item");
@@ -127,12 +129,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 사용자가 검색어를 입력하거나 삭제할 때마다 searchAdd 함수를 호출하여 실시간으로 리스트를 필터링하도록 해줌
-  // input 이벤트는 실시간으로 입력 필드의 변경 사항을 감지하기 때문에 사용자가 글자를 하나씩 입력하거나 삭제할 때마다 이벤트가 트리거됩니다.
+  // input 이벤트는 실시간으로 입력 필드의 변경 사항을 감지하기 때문에 사용자가 글자를 하나씩 입력하거나 삭제할 때마다 이벤트가 트리거됨
   searchTxt.addEventListener("input", searchAdd);
 
   searchClick.addEventListener("click", searchAdd);
 
-
-
+  // ---sortable.js 라이브러리 추가 : 드래그 앤 드롭 api사용---
+  new Sortable(document.querySelector(".content"), {
+    animation: 150, // 드래그 앤 드롭 애니메이션 시간 (ms)
+    onEnd: function (evt) {
+      // 아이템이 드롭된 후의 동작 정의
+      console.log("Item dropped:", evt.item);
+    },
+  });
 });
