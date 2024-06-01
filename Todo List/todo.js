@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const inputTxt = get("#inputtext");
   const addClick = get("#addBtn");
-  const container = get(".container");
+  const searchTxt = get("#searchtext");
+  const searchClick = get("#searchBtn");
+  const container = get(".content");
 
   // list 추가
   const todoAdd = () => {
@@ -33,14 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
     itemBox.classList.add("item");
     itemBox.innerHTML = `
             <input type="text" id="listitem" value="${pulltxt}" readOnly/>
-              <button type="button" id="editBtn">
+              <button type="button" id="editBtn" class="commonBtn">
                 <i class="bi bi-pencil-square"></i>
               </button>
-              <button type="button" id="deleteBtn">
+              <button type="button" id="deleteBtn" class="commonBtn">
                 <i class="bi bi-x-lg"></i>
               </button>
-
-
             `;
     container.appendChild(itemBox);
 
@@ -65,7 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (editButton && target.closest("#editBtn")) {
         display.removeAttribute("readOnly");
         display.focus();
-        // display.setSelectionRange(0, 0);
+        const textLength = display.value.length;
+        // start와 end 모두 textLength로 설정하여 커서를 텍스트의 마지막 위치로 이동시킵니다.
+        display.setSelectionRange(textLength, textLength);
 
         editButton.innerHTML = `<i class="bi bi-check-lg"></i>`;
         editButton.id = "confirmBtn";
@@ -104,4 +106,33 @@ document.addEventListener("DOMContentLoaded", () => {
     // localStorage에 "todolist"라는 키로 todoList 배열을 JSON 문자열로 변환하여 저장
     localStorage.setItem("todolist", JSON.stringify(todoList));
   }
+
+  // 검색 list 추가
+  const searchAdd = () => {
+    const pullsearch = searchTxt.value.toLowerCase();
+    const items = document.querySelectorAll(".item");
+    items.forEach((item) => {
+      const listtxt = item.querySelector("#listitem").value.toLowerCase();
+      if (listtxt.includes(pullsearch)) {
+        item.style.display = "";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  };
+
+  searchTxt.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      searchAdd();
+    }
+  });
+
+  // 사용자가 검색어를 입력하거나 삭제할 때마다 searchAdd 함수를 호출하여 실시간으로 리스트를 필터링하도록 해wna
+  // input 이벤트는 실시간으로 입력 필드의 변경 사항을 감지하기 때문에 사용자가 글자를 하나씩 입력하거나 삭제할 때마다 이벤트가 트리거됩니다.
+  searchTxt.addEventListener("input", searchAdd);
+
+  searchClick.addEventListener("click", searchAdd);
+
+
+
 });

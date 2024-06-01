@@ -65,23 +65,57 @@ header form #addBtn {
   background-color: var(--gray01-color);
 }
 
-header::after {
+/* header::after {
   content: "";
-  width: 600px;
+  width: 500px;
   height: 0.5px;
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 45%;
   transform: translate(-50%, -50%);
   background-color: var(--black-color);
+} */
+
+header .search {
+  width: 100%;
+  height: 40px;
+  text-align: right;
+  padding-top: 10px;
+  position: relative;
 }
 
-.container {
-  height: 100%;
-  margin-top: 80px;
+header .search::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  width: 170px;
+  height: 0.5px;
+  border-bottom: 1px solid #333;
 }
 
-.container .item {
+.search input {
+  width: 110px;
+  height: 25px;
+  outline: none;
+  padding-left: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+.search input::placeholder {
+  font-size: 0.7rem;
+}
+
+.search #searchBtn {
+  background-color: transparent;
+}
+
+.content {
+  margin-top: 50px;
+}
+
+.content .item {
   width: 355px;
   height: 40px;
   display: flex;
@@ -102,7 +136,7 @@ header::after {
   border: none;
 }
 
-.item button {
+.commonBtn {
   border: none;
   width: 30px;
   height: 30px;
