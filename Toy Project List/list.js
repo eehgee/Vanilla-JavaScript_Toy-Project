@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // 이전 버튼 click
   prebtn.addEventListener("click", () => {
     rotateY += 60;
-    carousel.style.transform = `translateZ(-259px) rotateY(${rotateY}deg)`;
+    carousel.style.transform = `translateZ(-389px) rotateY(${rotateY}deg)`;
   });
 
   // 다음 버튼 click
   nextbtn.addEventListener("click", () => {
     rotateY -= 60;
-    carousel.style.transform = `translateZ(-259px) rotateY(${rotateY}deg)`;
+    carousel.style.transform = `translateZ(-389px) rotateY(${rotateY}deg)`;
   });
 });

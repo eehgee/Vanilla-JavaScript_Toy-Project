@@ -4,7 +4,7 @@
 @import url(/css/default.css);
 
 body {
-  background-color: var(--white-color);
+  background-color: var(--gray01-color);
 }
 
 #wrap {
@@ -78,4 +78,18 @@ h1 {
 
 .item8 {
   grid-area: item8;
+}
+
+@media screen and (max-width: 886px) {
+  .container {
+    width: 420px;
+    height: 220px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .items {
+    width: 200px;
+    height: 220px;
+    cursor: pointer;
+  }
 }
