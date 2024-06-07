@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const get = (target) => {
+  const gets = (target) => {
     return document.querySelectorAll(target);
   };
 
-  const container = get(".star-rating");
-  const currentRating = get(".current-rating > span");
+  const container = gets(".star-rating");
+  const currentRating = gets(".current-rating > span");
 
+  // container : DOM 요소들의 리스트나 배열(전체 컬렉션)
+  // $contain : container 안에 있는 각각의 개별 요소(그 컬렉션 내의 각 개별 요소)
+  // i : 각 개별 요소에 해당하는 index
   container.forEach(($contain, i) => {
     starRating($contain);
 
@@ -17,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function starRating(container) {
     // data-max-count 속성이 없는 경우를 대비하여 || 연산자를 사용함
-    // container.dataset.maxCount가 존재하지 않거나 값이 falsy한 경우에 대비하여 기본값으로 5를 사용하도록 설정한다.
+    // container.dataset.maxCount가 존재하지 않거나 값이 falsy한 경우에 대비하여 기본값으로 5를 사용하도록 설정
     const maxCount = container.dataset.maxCount || 5;
 
     const link = document.querySelector(
@@ -81,13 +84,18 @@ document.addEventListener("DOMContentLoaded", () => {
           stars[i].style.color = "var(--main-color)";
         }
       }
-      const inputRating = currentIndex + 1;
 
+      const inputRating = currentIndex + 1;
+      
+      // 현재 클릭한 별점과 현재 저장되어있는 별점
+      // 서로 다를 경우 클릭한 별점을 현재 저장된 별점으로 업데이트
       if (inputRating !== currentRatings) {
         currentRatings = inputRating;
         const ratingEvent = new CustomEvent("rating-refresh", {
           detail: inputRating,
         });
+
+        // 컨테이너 요소와 연결된 모든 이벤트 리스너에 전달
         container.dispatchEvent(ratingEvent);
       }
     }

@@ -1,16 +1,16 @@
 ## 3D crousel
 
+# perspective
+원근감을 조절하여 3D효과를 만들 때 사용
+
 # rotateY 값 구하기
 ex. item이 총 6개 => 360 / 6 = 60
 
 # translateZ 값 구하기
-ex. 지름 : 300px, 각도 : 60
-지름의 반 : 150px
+ex. 지름 : 450px, 각도 : 60
+지름의 반 : 225px
 각도의 반 : 30도
-150/tan(30도) : 259
-
-# perspective
-원근감을 조절하여 3D효과를 만들 때 사용
+225/tan(30도) : 389
 
 
 

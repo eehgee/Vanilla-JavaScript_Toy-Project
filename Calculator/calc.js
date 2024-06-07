@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // backspace 이벤트
   backSpace.addEventListener("click", () => {
     textInput.value = textInput.value.slice(0, -1) || 0;
-    currentNumber = parseFloat(textInput.value);
 
+    currentNumber = parseFloat(textInput.value);
     if (currentNumber === 0) {
       currentNumber = "0";
       prevNumber = "0";
@@ -104,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
   total.addEventListener("click", () => {
     // 현재 입력된 숫자를 저장
     currentNumber = parseFloat(
+      // 이전 숫자와 연산자 잘라냄(ex. 12+56이 입력되었다면 56을 가져와 숫자로 변환)
       textInput.value.slice(prevNumber.toString().length + 1)
     );
 

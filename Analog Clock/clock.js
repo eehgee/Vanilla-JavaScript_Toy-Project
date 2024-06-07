@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const deghour = (hour % 12) * 30 + minute / 2; // 시간당 30도씩 회전 + 1분당 0.5도씩 회전
     const degminute = minute * 6 + second / 10; // 1분당 6도씩 회전 + 1초당 0.1도씩 회전
     const degsecond = second * 6; // 1초당 5도씩 회전
-
+    
     eleHour.style.transform = `rotate(${deghour}deg)`;
     eleMinute.style.transform = `rotate(${degminute}deg)`;
     eleSecond.style.transform = `rotate(${degsecond}deg)`;

@@ -44,14 +44,14 @@ h1 {
 }
 
 .analog-clock > .hand {
-  --deg: 0;
+  /* --deg: 0; */
   position: absolute;
   bottom: 50%;
   left: 49%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   transform-origin: bottom;
-  transform: translate3D(-50%, 0, 0) rotate(calc(var(--deg) * 1deg));
+  /* transform: translate3D(-50%, 0, 0) rotate(calc(var(--deg) * 1deg)); */
   z-index: 100;
 }
 

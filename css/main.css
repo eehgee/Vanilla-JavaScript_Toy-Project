@@ -102,6 +102,7 @@ nav.active ~ section {
   display: flex;
   align-items: center;
   grid-area: menu-icon;
+  user-select: none;
 }
 
 .myimg {

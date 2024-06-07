@@ -87,9 +87,4 @@ h1 {
     display: flex;
     flex-wrap: wrap;
   }
-  .items {
-    width: 200px;
-    height: 220px;
-    cursor: pointer;
-  }
 }

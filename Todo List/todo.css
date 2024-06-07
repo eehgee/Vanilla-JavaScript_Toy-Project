@@ -129,8 +129,8 @@ header .search::after {
   background-color: var(--white-color);
   width: 300px;
   height: 100%;
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   padding-left: 10px;
   outline: none;
   border: none;
@@ -145,13 +145,13 @@ header .search::after {
 }
 
 .item #editBtn {
-  background-color: rgb(248, 87, 0);
+  background-color: var(--orange05-color);
 }
 
 .item #deleteBtn {
-  background-color: rgb(255, 0, 72);
+  background-color: var(--deepred-color);
 }
 
 .item #confirmBtn {
-  background-color: aquamarine;
+  background-color: var(--green02-color);
 }
