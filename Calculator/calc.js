@@ -114,22 +114,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function calculator() {
+    let result = 0;
     // 이전 결과가 있는 경우와 없는 경우를 구분하여 처리
     if (prevNumber !== null && currentNumber !== null) {
       // 저장된 이전 숫자와 현재 숫자에 대해 연산 수행
       switch (operBtn) {
         case "+":
-          prevNumber += currentNumber;
+          result = prevNumber + currentNumber;
           break;
         case "-":
-          prevNumber -= currentNumber;
+          result = prevNumber - currentNumber;
           break;
         case "*":
-          prevNumber *= currentNumber;
+          result = prevNumber * currentNumber;
           break;
         case "÷":
           if (prevNumber !== 0) {
-            prevNumber /= currentNumber;
+            result = prevNumber / currentNumber;
           } else {
             textInput.value = "error";
 
@@ -141,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
           break;
       }
       // 결과를 텍스트 입력창에 표시
-      textInput.value += " = " + prevNumber;
+      textInput.value += " = " + result;
       console.log(textInput.value);
     }
   }

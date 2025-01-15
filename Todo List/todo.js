@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-
   // ---localStorage를 활용하여 새로고침 시에도 유지---
   // 저장된 데이터를 불러와서 화면에 표시
   function loadSavedData() {
